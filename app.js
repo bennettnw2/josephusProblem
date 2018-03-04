@@ -15,8 +15,6 @@ for(i = 1; i <= n; i++){
 console.log(arr)
 gameStart(arr,r)
 
-//this function start at index 0 and will skip s index and
-//remove the index it lands on
 function gameStart(arr,r){
 	if(arr.length !== 1){ //check if there is a winner, if not remove contestants
 		if(arr.length % 2 == 1){ //check if the last index will have the sword or be removed:
