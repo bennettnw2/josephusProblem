@@ -6,16 +6,30 @@ sword to the third person and so on until only one remains.
 //setting up the game by setting the number of contestants,
 //setting the number of places to move then,
 //looping and creating an array with the number of contestants
-const n = 11 //number of contestants
+var n = 1 //number of contestants
 const r = 1 //contestant place to remove; 1 means one over, 2 means two over, etc
+var numInput = document.querySelector('input[type="number"]')
 var output = document.getElementById('output')
-var btn = document.getElementById('input')
+var btn = document.getElementById('data')
 var arr = []
 for(i = 1; i <= n; i++){
 	arr.push(i)
 }
-//gameStart(arr,r)
-btn.addEventListener('click', alert('it works!'))
+
+btn.addEventListener('click', function(){
+	gameStart(arr,r)
+})
+
+numInput.addEventListener('input', function(){  //may use 'input' depending on behavior
+	//change the value of n to the value entered in numInput
+	n = numInput.value
+	console.log(n)
+	arr = []
+	for(i = 1; i <= n; i++){
+		arr.push(i)
+	}
+	console.log(arr)
+})
 
 function gameStart(arr,r){
 	if(arr.length !== 1){ //check if there is a winner, if not remove contestants
