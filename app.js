@@ -6,14 +6,16 @@ sword to the third person and so on until only one remains.
 //setting up the game by setting the number of contestants,
 //setting the number of places to move then,
 //looping and creating an array with the number of contestants
-const n = 28 //number of contestants
+const n = 11 //number of contestants
 const r = 1 //contestant place to remove; 1 means one over, 2 means two over, etc
+var output = document.getElementById('output')
+var btn = document.getElementById('input')
 var arr = []
 for(i = 1; i <= n; i++){
 	arr.push(i)
 }
-console.log(arr)
-gameStart(arr,r)
+//gameStart(arr,r)
+btn.addEventListener('click', alert('it works!'))
 
 function gameStart(arr,r){
 	if(arr.length !== 1){ //check if there is a winner, if not remove contestants
@@ -23,10 +25,9 @@ function gameStart(arr,r){
 		} else {						//otherwise do not move to the front of the array
 			remove(arr)					//and proceed with removal
 		}
-		console.log(arr)
 		gameStart(arr,r) //starts the elimation all over again with the new array
 	} else {
-		console.log(arr + " is the winner!")
+		output.textContent = arr + " is the winner!"
 	}
 }
 
